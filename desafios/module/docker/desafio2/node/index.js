@@ -8,12 +8,12 @@ const config = {
     password: 'root',
     database: 'nodedb'
 }
-const mysql = require('mysql')
-const connection = mysql.createConnection(config)
+// const mysql = require('mysql')
+// const connection = mysql.createConnection(config)
 
-const sql = "INSERT INTO people(name) values('Kleber')"
-connection.query(sql)
-connection.end()
+// const sql = "INSERT INTO people(name) values('Kleber')"
+// connection.query(sql)
+// connection.end()
 
 app.get('/', (req, res) => {
     res.send('<h1> Full Cycleeee Mudou</h1>')

@@ -10,7 +10,7 @@ services:
       - node-network
     volumes:
       - ./node:/user/src/app
-    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
+    # entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
     tty: true
     container_name: node
     ports:
@@ -35,14 +35,16 @@ services:
     build:
       context: nginx
       dockerfile: Dockerfile.prod
-    networks:
-      - node-network
     tty: true
     container_name: nginx
+    networks:
+      - node-network
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       - node
+    restart:
+      always
 
 networks:
   node-network:
