@@ -1,9 +1,18 @@
-//Desafio 1
-1. Container -> GO
-2. mostrar fullcycle rox
-3. A imagem não pode ter mais que 2MB
+# Desafio 1
 
-//Desafio2
-1. Nginx vai para aplicacao Node.js
-2. Inserir dado no mysql
-3. Quando o usuário acessar o site vai aparecer o nome cadastrado no
+## Acessado imagem Docker:
+
+```docker
+docker run almeidatiago/go-scratch:latest
+```
+
+Caso queria acessar o repositório:
+https://github.com/TiagoAlmeidaS/study-fullcycle/tree/master/desafios/module/docker/desafio1/go
+
+## Requisitos:
+
+Desafio 1
+
+1. Container -> GO
+2. mostrar fullcycle rocks
+3. A imagem não pode ter mais que 2MB
