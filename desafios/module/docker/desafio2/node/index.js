@@ -15,24 +15,18 @@ const sql = "INSERT INTO people(name) values('Kleber')"
 connection.query(sql)
 
 const sqlGet = "SELECT * FROM people"
-var select = connection.query(sqlGet)
+var resultSelect
+var select = connection.query(sqlGet, function (err, result, fields) {
+    if (err) throw err;
+    resultSelect = result.map((e) => e.name);
+    console.log(result);
+})
+var values = select.values
 connection.end()
 
-function addNewPerson() {
-    const connection = mysql.createConnection(config)
-    const sql = "INSERT INTO people(name) values('Kleber')"
-    connection.query(sql)
-    select = connection.query(sqlGet)
-    connection.end()
-}
-
 app.get('/', (req, res) => {
-    res.send('<h1> Full Cycleeee Mudou</h1>')
-    res.send('<button> adiciona aqui </button>')
-    res.send(select)
+    res.send(`<h1> Full Cycle Mudou</h1><br></br><h3>Nomes: ${resultSelect}</h3>`)
 })
-
-
 app.listen(port, () => {
     console.log('Rodando na porta' + port)
 })

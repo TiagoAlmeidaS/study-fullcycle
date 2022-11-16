@@ -41,6 +41,8 @@ services:
       dockerfile: Dockerfile.prod
     tty: true
     container_name: nginx
+    command: /bin/sh -c "nginx -g 'daemon off;'"
+    entrypoint: wait-for node:3000 -t 40 -- 
     networks:
       - node-network
     ports:
